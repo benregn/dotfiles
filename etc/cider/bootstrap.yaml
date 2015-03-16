@@ -1,0 +1,78 @@
+casks:
+  - alfred
+  - atom
+  - beardedspice
+  - betterzipql
+  - caffeine
+  - diffmerge
+  - dropbox
+  - firefox
+  - firefox-nightly
+  - flux
+  - google-chrome
+  - google-chrome-canary
+  - hipchat
+  - iterm2
+  - java
+  - logitech-control-center
+  - qlcolorcode
+  - qlmarkdown
+  - qlprettypatch
+  - qlstephen
+  - quicklook-csv
+  - quicklook-json
+  - sourcetree
+  - spectacle
+  - spotify
+  - steam
+  - sublime-text-dev
+  - suspicious-package
+  - the-unarchiver
+  - transmission
+  - vagrant
+  - virtualbox
+  - vlc
+  - webpquicklook
+formulas:
+  - ack
+  - autoconf
+  - bash
+  - boost
+  - brew-cask
+  - dockutil
+  - fasd
+  - gdbm
+  - git
+  - gitignore
+  - gnu-sed --default-names
+  - grc
+  - hub
+  - icu4c
+  - jq
+  - mackup
+  - mercurial
+  - node
+  - node
+  - openssl
+  - peco
+  - phantomjs
+  - pkg-config
+  - python
+  - python3
+  - readline
+  - redis
+  - source-highlight
+  - sqlite
+  - tree
+  - unrar
+  - vim
+  - wget
+  - xz
+  - zsh-completions
+taps:
+  - caskroom/cask
+  - karan/karan
+icons:
+  iTerm: https://dribbble.com/shots/1702947-iTerm-Replacement-Icon/attachments/271548
+after-scripts:
+  - brew linkapps
