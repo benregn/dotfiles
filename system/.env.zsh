@@ -18,3 +18,7 @@ setopt SHARE_HISTORY
 setopt CORRECT
 unsetopt FLOWCONTROL
 unsetopt MENU_COMPLETE
+
+# Handled by custom function
+
+export VIRTUAL_ENV_DISABLE_PROMPT=1
