@@ -12,14 +12,18 @@
 	trustctime = false
 
 [alias]
+	a = add
+	s = status -sb
 	st = status
-	sts = status -sb
 	stl = ls-files -m -o --exclude-standard
 	ci = commit
 	br = branch
 	co = checkout
 	cr = clone --recursive
-	df = diff --word-diff
+	d = diff
+	ds = diff --staged
+	dw = diff --word-diff
+	dw = diff --word-diff --staged
 	unstage = reset --hard HEAD
 	ag = !sh -c 'git ls-files -m -o --exclude-standard | grep $1 | xargs git add --verbose' -
 	l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
@@ -84,3 +88,5 @@
 	cmd = /usr/local/bin/ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
 	trustExitCode = true
 
+[pull]
+	rebase = true
