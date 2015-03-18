@@ -60,6 +60,19 @@ _bash_prompt_config() {
 
 }
 
+function virtualenv_prompt_info() {
+    if [ -n "$VIRTUAL_ENV" ]; then
+        if [ -f "$VIRTUAL_ENV/__name__" ]; then
+            local name=`cat $VIRTUAL_ENV/__name__`
+        elif [ `basename $VIRTUAL_ENV` = "__" ]; then
+            local name=$(basename $(dirname $VIRTUAL_ENV))
+        else
+            local name=$(basename $VIRTUAL_ENV)
+        fi
+        echo "($name) "
+    fi
+}
+
 bash_prompt_command() {
 
     local EXIT_CODE=$?
@@ -88,10 +101,10 @@ bash_prompt_command() {
 
     # Exit code
     if [[ $EXIT_CODE != 0 ]]; then
-        P_EXIT+="${P_RED}✘ "
+        P_EXIT+="${P_RED}✘ ${P_RESET}"
     fi
 
-    PS1="${P_EXIT}${P_USER}${P_YELLOW}@${P_HOST} ${P_YELLOW}${P_PWD}${P_GREEN}${P_GIT}${P_YELLOW} ❯ ${P_RESET}"
+    PS1="${P_EXIT}$(virtualenv_prompt_info)${P_USER}${P_YELLOW}@${P_HOST} ${P_YELLOW}${P_PWD}${P_GREEN}${P_GIT}${P_YELLOW} ❯ ${P_RESET}"
 }
 
 parse_git_branch() {
