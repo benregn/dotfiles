@@ -15,5 +15,6 @@ setopt INC_APPEND_HISTORY
 setopt NO_HIST_BEEP
 setopt NOCASEGLOB
 setopt SHARE_HISTORY
+setopt CORRECT
 unsetopt FLOWCONTROL
 unsetopt MENU_COMPLETE
