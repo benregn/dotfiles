@@ -41,6 +41,18 @@ if [ $OS = "OSX" ]; then
   done
 fi
 
+# Aliases for GRC from homebrew
+
+if is-executable grc && is-executable brew; then
+  source `brew --prefix grc`/etc/grc.bashrc
+fi
+
+if [[ -f /usr/local/bin/activate.sh ]]; then
+  source /usr/local/bin/activate.sh
+else
+  echo "autoenv not installed, run 'pip install autoenv' to install"
+fi
+
 
 if [[ -n $CURRENT_SCRIPT && -x "$READLINK" ]]; then
     SCRIPT_PATH=$($READLINK -f "$CURRENT_SCRIPT")
