@@ -8,6 +8,10 @@ export DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 [ -d "$DOTFILES_DIR/.git" ] && git --work-tree="$DOTFILES_DIR" --git-dir="$DOTFILES_DIR/.git" pull origin master
 
+# Create required dirs
+
+[ -d $HOME/.cider ] || mkdir $HOME/.cider
+
 # Bunch of symlinks
 
 ln -sfv "$DOTFILES_DIR/runcom/.bash_profile" $HOME
@@ -19,7 +23,6 @@ ln -sfv "$DOTFILES_DIR/runcom/.inputrc" $HOME
 ln -sfv "$DOTFILES_DIR/git/.gitconfig" $HOME
 ln -sfv "$DOTFILES_DIR/git/.gitignore_global" $HOME
 ln -sfv "$DOTFILES_DIR/etc/mackup/.mackup.cfg" $HOME
-[ -d $HOME/.cider ] || mkdir $HOME/.cider
 ln -sfv "$DOTFILES_DIR/etc/cider/bootstrap.yaml" $HOME/.cider/bootstrap.yaml
 ln -sfv "$DOTFILES_DIR/etc/editorconfig/.editorconfig" $HOME
 
