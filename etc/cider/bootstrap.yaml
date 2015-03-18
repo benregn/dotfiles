@@ -15,12 +15,14 @@ casks:
   - iterm2
   - java
   - logitech-control-center
+  - postgres
   - qlcolorcode
   - qlmarkdown
   - qlprettypatch
   - qlstephen
   - quicklook-csv
   - quicklook-json
+  - rescuetime
   - sourcetree
   - spectacle
   - spotify
@@ -69,6 +71,7 @@ formulas:
   - wget
   - xz
   - zsh-completions
+  - zsh-syntax-highlighting
 taps:
   - caskroom/cask
   - karan/karan
