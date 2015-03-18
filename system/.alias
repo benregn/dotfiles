@@ -6,6 +6,9 @@ alias _="sudo"
 alias g="git"
 alias rr="rm -rf"
 
+alias gs='git status -sb'
+alias gmm='git commit -m'
+
 # is-executable hub && eval "$(hub alias -s)" # alias git=hub
 
 # Global aliases
@@ -74,3 +77,6 @@ done
 
 alias cleanupds="find . -type f -name '*.DS_Store' -ls -exec /bin/rm {} \;"
 alias cleanupad="find . -type d -name .AppleDouble -ls -exec /bin/rm -r {} \;"
+
+# Python
+alias venv3="mkvirtualenv --python=`which python3`"
