@@ -19,6 +19,9 @@
 	ci = commit
 	br = branch
 	co = checkout
+	m = checkout master
+	pu = push
+	pl = pull
 	cr = clone --recursive
 	d = diff
 	ds = diff --staged
