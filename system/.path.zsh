@@ -8,6 +8,7 @@ path+=(
     "/sbin"
     "/usr/sbin"
     "/usr/local/sbin"
+    "/Applications/Postgres.app/Contents/Versions/9.4/bin"
 )
 if is-executable brew; then
     path+=(
