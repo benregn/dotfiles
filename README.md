@@ -24,6 +24,11 @@ Alternatively, you can install this into `~/.dotfiles` from remote without Git u
 
     sh -c "`curl -fsSL https://raw.github.com/bernegn/dotfiles/master/remote-install.sh`"
 
+## iTerm2 keybindings
+
+Set alt+left to Send Escape Sequence [1;5C
+Set alt+right to Send Escape Sequence [1;5D
+
 ## Custom settings
 
 You can put your custom settings, such as Git credentials in the `system/.custom` file which will be sourced from `.bash_profile` automatically. This file is in `.gitignore`.
