@@ -22,6 +22,7 @@ fi
 
 # List declared aliases, functions
 
+alias listgitaliases="git config --get-regexp alias"
 alias listaliases="alias | sed 's/=.*//'"
 alias listfunctions="declare -f | grep '^[a-z].* ()' | sed 's/{$//'" # show non _prefixed functions
 
