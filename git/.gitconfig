@@ -10,6 +10,7 @@
 	editor = nano
 	filemode = false
 	trustctime = false
+	logAllRefUpdates = true
 
 [alias]
 	a = add
@@ -19,9 +20,8 @@
 	ci = commit
 	br = branch
 	co = checkout
+	cob = checkout -b
 	m = checkout master
-	pu = push
-	pl = pull
 	cr = clone --recursive
 	d = diff
 	ds = diff --staged
@@ -36,6 +36,7 @@
 	g = grep --break --heading --line-number
 	amend = commit --amend --reuse-message=HEAD
 	contrib = shortlog --summary --numbered
+	undo = reset --soft HEAD^
 
 [color]
 	ui = auto
