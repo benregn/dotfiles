@@ -19,6 +19,8 @@ setopt CORRECT
 unsetopt FLOWCONTROL
 unsetopt MENU_COMPLETE
 
+export HISTFILE=$HOME/.zsh_history
+
 # Handled by custom function
 
 export VIRTUAL_ENV_DISABLE_PROMPT=1
