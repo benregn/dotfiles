@@ -33,7 +33,7 @@ LS_TIMESTYLEISO=`is-supported "ls --time-style=long-iso" --time-style=long-iso`
 LS_GROUPDIRSFIRST=`is-supported "ls --group-directories-first" --group-directories-first`
 
 alias l="ls -lahAF ${LS_COLORS} ${LS_TIMESTYLEISO} ${LS_GROUPDIRSFIRST}"
-alias ll="ls -lAF ${LS_COLORS}"
+alias ll=l
 alias lt="ls -lhAtrF ${LS_COLORS} ${LS_TIMESTYLEISO} ${LS_GROUPDIRSFIRST}"
 alias ld="ls -ldF ${LS_COLORS} */"
 
