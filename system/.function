@@ -132,6 +132,24 @@ dataurl() {
     echo "data:${mimeType};base64,$(openssl base64 -in "$1" | tr -d '\n')"
 }
 
+# a wrapper for versionbump
+# https://github.com/vortec/versionbump
+# defaults to patch
+# assumes a VERSION file exists only containing current version
+# $1 - place to bump
+function bump () {
+    if [ -z "$1" ]
+    then
+        version_place='patch'
+    else
+        version_place=$1
+    fi
+
+    current_version=`cat VERSION`
+    `versionbump -c $current_version $version_place VERSION` 2> /dev/null
+    return 0
+}
+
 reloadb () {
     source ~/.bash_profile && echo "Bash reloaded."
 }
