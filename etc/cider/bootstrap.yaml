@@ -82,6 +82,7 @@ formulas:
   - wget
   - xz
   - zsh-completions
+  - zsh-history-substring-search
   - zsh-syntax-highlighting
 taps:
   - caskroom/cask

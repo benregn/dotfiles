@@ -25,12 +25,21 @@ if [[ "${terminfo[knp]}" != "" ]]; then
   bindkey "${terminfo[knp]}" down-line-or-history     # [PageDown] - Down a line of history
 fi
 
-if [[ "${terminfo[kcuu1]}" != "" ]]; then
-  bindkey "${terminfo[kcuu1]}" up-line-or-search      # start typing + [Up-Arrow] - fuzzy find history forward
-fi
-if [[ "${terminfo[kcud1]}" != "" ]]; then
-  bindkey "${terminfo[kcud1]}" down-line-or-search    # start typing + [Down-Arrow] - fuzzy find history backward
-fi
+# https://github.com/zsh-users/zsh-history-substring-search
+# Type in any part of any previously entered command and
+# press the UP and DOWN arrow keys to cycle through the matching commands.
+# Begin with ^ to anchor the search to the beginning of the line.
+zmodload zsh/terminfo
+bindkey "$terminfo[kcuu1]" history-substring-search-up
+bindkey "$terminfo[kcud1]" history-substring-search-down
+
+# "default" setting
+# if [[ "${terminfo[kcuu1]}" != "" ]]; then
+#   bindkey "${terminfo[kcuu1]}" up-line-or-search      # start typing + [Up-Arrow] - fuzzy find history forward
+# fi
+# if [[ "${terminfo[kcud1]}" != "" ]]; then
+#   bindkey "${terminfo[kcud1]}" down-line-or-search    # start typing + [Down-Arrow] - fuzzy find history backward
+# fi
 
 if [[ "${terminfo[khome]}" != "" ]]; then
   bindkey "${terminfo[khome]}" beginning-of-line      # [Home] - Go to beginning of line
