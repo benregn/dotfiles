@@ -138,16 +138,20 @@ dataurl() {
 # assumes a VERSION file exists only containing current version
 # $1 - place to bump
 function bump () {
-    if [ -z "$1" ]
-    then
-        version_place='patch'
-    else
-        version_place=$1
-    fi
+    if is-executable versionbump; then
+        if [ -z "$1" ]; then
+            version_place='patch'
+        else
+            version_place=$1
+        fi
 
-    current_version=`cat VERSION`
-    `versionbump -c $current_version $version_place VERSION` 2> /dev/null
-    return 0
+        current_version=`cat VERSION`
+        `versionbump -c $current_version $version_place VERSION` 2> /dev/null
+        return 0
+    else
+        echo "versionbump not installed, install by running 'pip install versionbump'"
+        return 1
+    fi
 }
 
 reloadb () {
