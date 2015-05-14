@@ -21,6 +21,7 @@ casks:
   - logitech-control-center
   - mjolnir
   - pgadmin3
+  - plex-media-server
   - postgres
   - qlcolorcode
   - qlmarkdown
@@ -77,6 +78,7 @@ formulas:
   - source-highlight
   - sqlite
   - terminal-notifier
+  - tldr
   - tree
   - unrar
   - vim
@@ -88,6 +90,7 @@ formulas:
 taps:
   - caskroom/cask
   - karan/karan
+  - tldr-pages/tldr
 icons:
   iTerm: https://dribbble.com/shots/1702947-iTerm-Replacement-Icon/attachments/271548
 after-scripts:

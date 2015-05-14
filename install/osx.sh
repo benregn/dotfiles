@@ -25,7 +25,6 @@ source "$DOTFILES_DIR/install/mjolnir.sh"
 npm install -g bower
 npm install -g grunt
 npm install -g gulp
-npm install -g tldr
 npm install -g spot
 npm install -g vtop
 
