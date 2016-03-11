@@ -7,6 +7,7 @@ casks:
   - caffeine
   - calibre
   - diffmerge
+  - diff-so-fancy
   - dropbox
   - firefox
   - firefox-nightly
