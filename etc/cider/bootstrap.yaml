@@ -50,6 +50,7 @@ formulas:
   - bash
   - boost
   - brew-cask
+  - docker-completion
   - dockutil
   - fasd
   - gdbm
@@ -92,6 +93,7 @@ taps:
   - caskroom/cask
   - karan/karan
   - tldr-pages/tldr
+  - homebrew/completions
 icons:
   iTerm: https://dribbble.com/shots/1702947-iTerm-Replacement-Icon/attachments/271548
 after-scripts:
