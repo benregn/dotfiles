@@ -22,3 +22,7 @@ fi
 # https://github.com/zsh-users/zsh-history-substring-search#configuration
 # customize how the query should be highlighted inside a matching command
 export HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='bg=green,fg=white,bold'
+
+# for triggering autoenv on new terminal sessions
+# from https://github.com/kennethreitz/autoenv/issues/26
+cd .
