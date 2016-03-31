@@ -26,3 +26,6 @@ export HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='bg=green,fg=white,bold'
 # for triggering autoenv on new terminal sessions
 # from https://github.com/kennethreitz/autoenv/issues/26
 cd .
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
