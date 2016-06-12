@@ -1,5 +1,6 @@
 casks:
   - alfred
+  - asepsis
   - atom
   - beardedspice
   - betterzipql
