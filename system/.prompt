@@ -104,7 +104,7 @@ bash_prompt_command() {
         P_EXIT+="${P_RED}✘ ${P_RESET}"
     fi
 
-    PS1="${P_EXIT}$(virtualenv_prompt_info)${P_USER}${P_YELLOW}@${P_HOST} ${P_YELLOW}${P_PWD}${P_GREEN}${P_GIT}${P_YELLOW} ❯ ${P_RESET}"
+    PS1="${P_EXIT}$(date +"[%H:%M:%S]") $(virtualenv_prompt_info)${P_USER}${P_YELLOW}@${P_HOST} ${P_YELLOW}${P_PWD}${P_GREEN}${P_GIT}${P_YELLOW} ❯ ${P_RESET}"
 }
 
 parse_git_branch() {
@@ -119,7 +119,28 @@ if $SHELL_BASH; then
     PROMPT_COMMAND=bash_prompt_command
 else
     # Assume zsh
-    function precmd {
-        bash_prompt_command
+    autoload -U colors && colors
+    setopt PROMPT_SUBST
+    function precmd() {
+        local EXIT_CODE=$?
+        local P_EXIT=""
+        local MAXLENGTH=35
+        local TRUNC_SYMBOL=".."
+        local DIR=${PWD##*/}
+        local P_PWD=${PWD/#$HOME/\~}
+
+        MAXLENGTH=$(( ( MAXLENGTH < ${#DIR} ) ? ${#DIR} : MAXLENGTH ))
+
+        local OFFSET=$(( ${#P_PWD} - MAXLENGTH ))
+
+        if [ ${OFFSET} -gt "0" ]; then
+            P_PWD=${P_PWD:$OFFSET:$MAXLENGTH}
+            P_PWD=${TRUNC_SYMBOL}/${P_PWD#*/}
+        fi
+        if [[ $EXIT_CODE != 0 ]]; then
+            P_EXIT+="%{$fg[red]%}✘ %{$reset_color%}"
+        fi
+        print -rP ${P_EXIT}%{$fg[white]%}$(date +"[%H:%M:%S]")%{$reset_color%} $(virtualenv_prompt_info)%{$fg[green]%}%n%{$reset_color%}@%{$fg[blue]%}%m %{$fg[yellow]%}${P_PWD}%{$fg[green]%}$(parse_git_branch)%{$fg[yellow]%}%{$reset_color%}
     }
+    export PROMPT="%{$fg[yellow]%} ❯ %{$reset_color%}"
 fi
