@@ -80,4 +80,4 @@ alias cleanupds="find . -type f -name '*.DS_Store' -ls -exec /bin/rm {} \;"
 alias cleanupad="find . -type d -name .AppleDouble -ls -exec /bin/rm -r {} \;"
 
 # Python
-alias venv3="mkvirtualenv --python=`which python3`"
+alias venv3="mkvirtualenv -r ${DOTFILES_DIR}/install/requirements-virtualenv.txt --python=`which python3`"
