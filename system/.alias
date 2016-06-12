@@ -1,6 +1,6 @@
 # Shortcuts
 
-alias edit='subl ~/.zshrc'
+alias edit='subl ~/.dotfiles'
 
 alias _="sudo"
 alias g="git"
