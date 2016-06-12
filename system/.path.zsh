@@ -9,6 +9,8 @@ path+=(
     "/usr/sbin"
     "/usr/local/sbin"
     "/Applications/Postgres.app/Contents/Versions/9.4/bin"
+    "$HOME/google-cloud-sdk/bin"
+    "/Users/tomas/.local/bin"
 )
 if is-executable brew; then
     path+=(
