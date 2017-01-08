@@ -1,3 +1,5 @@
+after-scripts:
+  - brew linkapps
 casks:
   - alfred
   - appcleaner
@@ -149,6 +151,8 @@ formulas:
   - zsh-completions
   - zsh-history-substring-search
   - zsh-syntax-highlighting
+icons:
+    iTerm: https://dribbble.com/shots/1702947-iTerm-Replacement-Icon/attachments/271548
 taps:
   - caskroom/cask
   - drone/drone
@@ -162,7 +166,3 @@ taps:
   - larsimmisch/avr
   - px4/px4
   - tldr-pages/tldr
-icons:
-  iTerm: https://dribbble.com/shots/1702947-iTerm-Replacement-Icon/attachments/271548
-after-scripts:
-  - brew linkapps
