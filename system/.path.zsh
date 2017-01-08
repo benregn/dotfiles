@@ -11,6 +11,7 @@ path+=(
     "/Applications/Postgres.app/Contents/Versions/9.4/bin"
     "$HOME/google-cloud-sdk/bin"
     "/Users/tomas/.local/bin"
+    "$GOPATH/bin"
 )
 if is-executable brew; then
     path+=(

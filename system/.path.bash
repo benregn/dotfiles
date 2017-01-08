@@ -17,6 +17,7 @@ prepend "$HOME/bin"
 prepend "/sbin"
 prepend "/usr/sbin"
 prepend "/usr/local/sbin"
+prepend "$GOPATH/bin"
 
 # Remove duplicates (preserving prepended items)
 # Source: http://unix.stackexchange.com/a/40755
