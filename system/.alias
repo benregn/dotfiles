@@ -9,6 +9,8 @@ alias rr="rm -rf"
 alias gs='git status -sb'
 alias gmm='git commit -m'
 
+alias dc='docker-compose'
+
 # is-executable hub && eval "$(hub alias -s)" # alias git=hub
 
 # Global aliases
