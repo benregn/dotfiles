@@ -12,6 +12,10 @@ export DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 [ -d $HOME/.cider ] || mkdir $HOME/.cider
 
+[ -d $HOME/.cache ] || mkdir $HOME/.cache
+[ -d $HOME/.cache/pip ] || mkdir $HOME/.cache/pip
+[ -d $HOME/.cache/pip/wheelhouse ] || mkdir $HOME/.cache/pip/wheelhouse
+
 # Bunch of symlinks
 
 ln -sfv "$DOTFILES_DIR/runcom/.bash_profile" $HOME
