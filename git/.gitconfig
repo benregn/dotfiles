@@ -7,7 +7,7 @@
 
 [core]
 	excludesfile = ~/.gitignore_global
-	editor = nano
+	editor = subl -n -w
 	filemode = false
 	trustctime = false
 	logAllRefUpdates = true
