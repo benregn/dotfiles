@@ -4,11 +4,11 @@ casks:
   - atom
   - beardedspice
   - betterzipql
-  - boot2docker
   - caffeine
   - calibre
   - diffmerge
   - diff-so-fancy
+  - docker
   - dropbox
   - firefox
   - firefox-nightly
