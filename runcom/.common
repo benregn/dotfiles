@@ -13,7 +13,6 @@ elif [ -n "$BASH_VERSION" ]; then
 fi
 
 # Resolve DOTFILES_DIR (assuming ~/.dotfiles on distros without readlink and/or $BASH_SOURCE/$0)
-
 READLINK=$(which greadlink || which readlink)
 if $SHELL_BASH; then
     CURRENT_SCRIPT=${BASH_SOURCE}
@@ -21,8 +20,17 @@ else
     CURRENT_SCRIPT=${0}
 fi
 
-# OS
+if [[ -n $CURRENT_SCRIPT && -x "$READLINK" ]]; then
+    SCRIPT_PATH=$($READLINK -f "$CURRENT_SCRIPT")
+    DOTFILES_DIR=$(dirname $(dirname ${SCRIPT_PATH}))
+elif [ -d "$HOME/.dotfiles" ]; then
+    DOTFILES_DIR="$HOME/.dotfiles"
+else
+    echo "Unable to find dotfiles, exiting."
+    return # `exit 1` would quit the shell itself
+fi
 
+# OS
 if [ "$(uname -s)" = "Darwin" ]; then
     OS="OSX"
 else
@@ -50,7 +58,7 @@ fi
 if [[ -f /usr/local/bin/activate.sh ]]; then
   source /usr/local/bin/activate.sh
 else
-  echo "autoenv not installed, run 'pip install autoenv' to install"
+  echo "autoenv not installed, run 'pip install https://github.com/kennethreitz/autoenv/zipball/master' to install"
 fi
 
 
