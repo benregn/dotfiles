@@ -55,13 +55,13 @@ casks:
   - webpquicklook
   - xquartz
 formulas:
+  - Caskroom/versions/firefoxdeveloperedition
   - ack
   - autoconf
   - autossh
   - awscli
   - bash
   - boost
-  - brew-cask
   - cmake
   - diff-so-fancy
   - docker-completion
@@ -75,7 +75,6 @@ formulas:
   - gcc
   - gdbm
   - git
-  - gitignore
   - gnu-sed --default-names
   - gnupg2
   - gnutls
@@ -162,7 +161,6 @@ taps:
   - homebrew/core
   - homebrew/versions
   - homebrew/x11
-  - karan/karan
   - larsimmisch/avr
   - px4/px4
   - tldr-pages/tldr
