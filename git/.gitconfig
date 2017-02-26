@@ -43,6 +43,9 @@
 	ll = log --pretty=oneline --graph --abbrev-commit
 	lm = log --pretty=format:'* %s (%h)'
 	lg = log -p
+
+	aliases = "!git config -l | grep alias | cut -c 7-"
+
 	g = grep --break --heading --line-number
 	amend = commit --amend --reuse-message=HEAD
 	contrib = shortlog --summary --numbered
