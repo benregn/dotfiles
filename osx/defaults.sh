@@ -10,6 +10,9 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 # General UI/UX                                                               #
 ###############################################################################
 
+# Attempt to disable dictionary word lookup shortcut (cmd+ctrl+d)
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 70 '<dict><key>enabled</key><false/></dict>'
+
 # Set computer name (as done via System Preferences → Sharing)
 sudo scutil --set ComputerName "Silver"
 sudo scutil --set HostName "Silver"
