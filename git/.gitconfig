@@ -1,6 +1,6 @@
 [user]
 	name = Tomas Thor Jonsson
-	email = benregn@gmail.com
+	useConfigOnly = true
 
 [github]
 	user = benregn
@@ -15,6 +15,9 @@
 
 [commit]
 	template = ~/.git_commit_msg.txt
+
+[init]
+	templatedir = ~/.git-templates
 
 [alias]
 	a = add
@@ -43,6 +46,7 @@
 	g = grep --break --heading --line-number
 	amend = commit --amend --reuse-message=HEAD
 	contrib = shortlog --summary --numbered
+	email-guess = !. ~/.git-alias-email-guess.sh
 
 [color]
 	ui = auto
