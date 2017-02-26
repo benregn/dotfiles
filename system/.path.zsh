@@ -5,6 +5,7 @@ path+=(
     "/usr/local/bin"
     "$DOTFILES_DIR/bin"
     "$HOME/bin"
+    "$HOME/.local/bin"
     "/sbin"
     "/usr/sbin"
     "/usr/local/sbin"
