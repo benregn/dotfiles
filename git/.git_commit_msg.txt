@@ -1,0 +1,11 @@
+# If applied, this commit will...
+
+
+# Focus on the reasons why you made the change in the first place
+#   * the way things worked before the change (and what was wrong with that)
+#   * the way they work now
+#   * why you decided to solve it the way you did.
+
+
+# Provide links to any relevant tickets, articles or other resources
+

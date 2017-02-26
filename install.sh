@@ -26,6 +26,7 @@ ln -sfv "$DOTFILES_DIR/runcom/.common" $HOME
 ln -sfv "$DOTFILES_DIR/runcom/.inputrc" $HOME
 ln -sfv "$DOTFILES_DIR/git/.gitconfig" $HOME
 ln -sfv "$DOTFILES_DIR/git/.gitignore_global" $HOME
+ln -sfv "$DOTFILES_DIR/git/.git_commit_msg.txt" $HOME
 ln -sfv "$DOTFILES_DIR/etc/mackup/.mackup.cfg" $HOME
 ln -sfv "$DOTFILES_DIR/etc/cider/bootstrap.yaml" $HOME/.cider/bootstrap.yaml
 ln -sfv "$DOTFILES_DIR/etc/editorconfig/.editorconfig" $HOME

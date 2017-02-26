@@ -13,6 +13,9 @@
 	logAllRefUpdates = true
 	pager = diff-highlight | diff-so-fancy | less -RFX
 
+[commit]
+	template = ~/.git_commit_msg.txt
+
 [alias]
 	a = add
 	s = status -sb
