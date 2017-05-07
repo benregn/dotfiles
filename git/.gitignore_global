@@ -4,5 +4,5 @@
 .idea
 node_modules
 bower_components
-.env
 __pycache__
+.autoenv.zsh

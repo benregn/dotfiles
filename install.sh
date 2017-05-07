@@ -19,6 +19,8 @@ export DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 [ -d $HOME/.git-templates ] || mkdir $HOME/.git-templates
 [ -d $HOME/.git-templates/hooks ] || mkdir $HOME/.git-templates/hooks
 
+git clone https://github.com/Tarrasch/zsh-autoenv $DOTFILES_DIR/lib/zsh-autoenv
+
 # Bunch of symlinks
 
 ln -sfv "$DOTFILES_DIR/runcom/.bash_profile" $HOME

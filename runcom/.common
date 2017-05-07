@@ -49,11 +49,11 @@ if [ $OS = "OSX" ]; then
   done
 fi
 
-if [[ -f /usr/local/bin/activate.sh ]]; then
-  source /usr/local/bin/activate.sh
-else
-  echo "autoenv not installed, run 'pip install https://github.com/kennethreitz/autoenv/zipball/master' to install"
-fi
+# if [[ -f /usr/local/bin/activate.sh ]]; then
+#   source /usr/local/bin/activate.sh
+# else
+#   echo "autoenv not installed, run 'pip install https://github.com/kennethreitz/autoenv/zipball/master' to install"
+# fi
 
 
 if [[ -n $CURRENT_SCRIPT && -x "$READLINK" ]]; then
