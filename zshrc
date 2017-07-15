@@ -46,30 +46,6 @@ if zplug check zsh-users/zsh-autosuggestions; then
   ZSH_AUTOSUGGEST_CLEAR_WIDGETS=("${(@)ZSH_AUTOSUGGEST_CLEAR_WIDGETS:#(up|down)-line-or-history}")
 fi
 
-#
-# Use single ssh-agent launched by launchd
-#
-export SSH_ASKPASS=/usr/local/bin/ssh-ask-keychain
-if test -f $HOME/.ssh-agent-pid && kill -0 `cat $HOME/.ssh-agent-pid` 2>/dev/null; then
-  SSH_AUTH_SOCK=`cat $HOME/.ssh-auth-sock`
-  SSH_AGENT_PID=`cat $HOME/.ssh-agent-pid`
-  export SSH_AUTH_SOCK SSH_AGENT_PID
-else
-
-  # Discover the running ssh-agent started by launchd
-  export SSH_AGENT_PID=$(pgrep -U $USER ssh-agent)
-  if [ -n "$SSH_AGENT_PID" ]; then
-    export SSH_AUTH_SOCK=$(lsof -U -a -p $SSH_AGENT_PID -F n | grep '^n/' | cut -c2-)
-    echo "$SSH_AUTH_SOCK" >! ${HOME}/.ssh-auth-sock
-    echo "$SSH_AGENT_PID" >! ${HOME}/.ssh-agent-pid
-  else
-    echo "No running ssh-agent found.  Check your launchd service."
-  fi
-
-  # Add all the local keys, getting the passphrase from keychain, helped by the $SSH_ASKPASS script.
-  ssh-add < /dev/null
-fi
-
 export N_PREFIX="$HOME/.n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
 
 # for triggering zsh-autoenv on new iTerm2 panes
