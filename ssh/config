@@ -1,0 +1,39 @@
+ServerAliveInterval 5
+
+Host listen-management
+	ForwardAgent yes
+	User ubuntu
+	Hostname 52.16.130.70
+	ServerAliveInterval 5
+
+Host *.falcon-listen.
+    User ubuntu
+    StrictHostKeyChecking no
+    ProxyCommand ssh -q -W %h:%p listen-management
+    ControlMaster auto
+    ControlPersist 5m
+    ControlPath ~/.ssh/ssh-listen-%h
+
+Host *.listen.aws.flcn.io
+    User ubuntu
+    StrictHostKeyChecking no
+    IdentityFile ~/.ssh/Falcon_Listen_EU.pem
+    ControlMaster auto
+    ControlPersist 5m
+    ControlPath ~/.ssh/ssh-listen-%h
+
+Host datastore-a-1
+    User ubuntu
+    Hostname 10.1.11.29
+    ProxyCommand ssh -q -W %h:%p infrastructure-bastion-a
+    IdentityFile ~/.ssh/Datastore.pem
+    ControlMaster auto
+    ControlPersist 5m
+
+Host *.datascience.
+    User ubuntu
+    ProxyCommand ssh -q -W %h:%p listen-management
+    IdentityFile ~/.ssh/datascience_eu-west-1
+    ControlMaster auto
+    ControlPersist 5m
+    ControlPath ~/.ssh/ssh-datascience-%h

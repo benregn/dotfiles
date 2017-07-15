@@ -1,0 +1,31 @@
+alias venv3="mkvirtualenv -r ~/.dotfiles/virtualenv-requirements.txt --python=`which python3`"
+
+alias ll="ls -lahAF"
+
+alias g="git"
+compdef g=git
+alias gs="git status -sb"
+
+alias dc="docker-compose"
+compdef dc=docker-compose
+
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+
+alias j='fasd_cd -d'
+
+LS_COLORS=`is-supported "ls --color" --color -G`
+LS_TIMESTYLEISO=`is-supported "ls --time-style=long-iso" --time-style=long-iso`
+LS_GROUPDIRSFIRST=`is-supported "ls --group-directories-first" --group-directories-first`
+
+alias l="ls -lahAF ${LS_COLORS} ${LS_TIMESTYLEISO} ${LS_GROUPDIRSFIRST}"
+alias ll=l
+alias lt="ls -lhAtrF ${LS_COLORS} ${LS_TIMESTYLEISO} ${LS_GROUPDIRSFIRST}"
+alias ld="ls -ldF ${LS_COLORS} */"
+
+unset LS_COLORS LS_TIMESTYLEISO LS_GROUPDIRSFIRST
+
+
+alias edit="subl ~/.dotfiles"
+alias reload='source ~/.zshrc && echo "zsh reloaded"'

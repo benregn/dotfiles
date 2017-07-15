@@ -1,0 +1,16 @@
+is-executable() {
+    local BIN=`command -v "$1" 2>/dev/null`
+    if [[ ! $BIN == "" && -x $BIN ]]; then
+        return 0
+    else
+        return 1
+    fi
+}
+
+is-supported() {
+    if [ $# -eq 1 ]; then
+        eval $1 > /dev/null 2>&1 && true || false
+    else
+        eval $1 > /dev/null 2>&1 && echo -n "$2" || echo -n "$3"
+    fi
+}

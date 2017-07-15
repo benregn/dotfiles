@@ -1,0 +1,38 @@
+- clean: ['~']
+
+- defaults:
+    link:
+        create: true
+        relink: true
+
+- link:
+    ~/.dotfiles: ""
+    ~/.zplug:
+        path: zplug
+    ~/.zsh:
+        path: zsh
+    ~/.ssh/config:
+        path: ssh/config
+    ~/.zshrc:
+        path: zshrc
+    ~/.cider/bootstrap.yaml:
+        path: cider_bootstrap.yaml
+    ~/.editorconfig:
+        path: editorconfig
+    ~/.hammerspoon/init.lua:
+        path: hammerspoon.lua
+    ~/.gitconfig:
+        path: git/gitconfig
+    ~/.gitignore_global:
+        path: git/gitignore_global
+    ~/.git-templates/hooks/post-checkout:
+        path: git/hook-post-checkout
+    ~/.git-commit-msg:
+        path: git/git-commit-msg
+    ~/.git-alias-email-guess.sh:
+        path: git/git-alias-email-guess.sh
+    ~/.gemrc:
+        path: gemrc
+
+- shell:
+    - [git submodule update --init --recursive, Installing submodules]
