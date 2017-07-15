@@ -7,4 +7,3 @@ Dotfiles uses [Dotbot][dotbot] for installation. Inspiration taken from [anishat
 
 [dotbot]: https://github.com/anishathalye/dotbot
 [anishathalye]: https://github.com/anishathalye/dotfiles
-
