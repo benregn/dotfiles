@@ -1,5 +1,6 @@
 typeset -U path
 path+=(
+    "$HOME/.rbenv/shims"
     "/bin"
     "/usr/bin"
     "/usr/local/bin"
