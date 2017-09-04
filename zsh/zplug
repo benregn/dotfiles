@@ -15,8 +15,8 @@ zplug docker/compose, as:command, use:contrib/completion/zsh/_docker-compose, de
 zplug docker/docker, as:command, use:contrib/completion/zsh/_docker, defer:0
 
 zplug zsh-users/zsh-autosuggestions, at:develop, defer:2
-zplug zsh-users/zsh-history-substring-search, defer:3 # Should be loaded last.
 zplug zsh-users/zsh-syntax-highlighting, defer:3 # Should be loaded 2nd last.
+zplug zsh-users/zsh-history-substring-search, defer:3 # Should be loaded last.
 
 zplug sindresorhus/pure, use:pure.zsh, from:github, as:theme
 
