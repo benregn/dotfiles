@@ -12,7 +12,7 @@
     filemode = false
     trustctime = false
     logAllRefUpdates = true
-    pager = diff-highlight | diff-so-fancy | less -RFX
+    pager = diff-so-fancy | less -RFX
 
 [commit]
 	template = ~/.git-commit-msg
