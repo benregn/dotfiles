@@ -1,14 +1,24 @@
 typeset -U path
-path+=(
-    "$HOME/.rbenv/shims"
-    "/bin"
-    "/usr/bin"
-    "/usr/local/bin"
+
+# prepend to $PATH
+path=(
     "$HOME/bin"
+    "$HOME/local"
     "$HOME/.local/bin"
-    "/sbin"
-    "/usr/sbin"
+    "$HOME/.rbenv/shims"
+    "$HOME/.rbenv/bin"
+
+    $path
+)
+
+# append to $PATH
+path+=(
     "/usr/local/sbin"
+    "/usr/local/bin"
+    "/usr/sbin"
+    "/usr/bin"
+    "/sbin"
+    "/bin"
     "$HOME/google-cloud-sdk/bin"
     "$GOPATH/bin"
 )

@@ -2,6 +2,8 @@ source ~/.zsh/zplug
 
 source ~/.zsh/env
 
+source ~/.zsh/path
+
 source ~/.zsh/functions
 
 source ~/.zsh/aliases
