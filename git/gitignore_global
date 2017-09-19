@@ -7,3 +7,4 @@ bower_components
 __pycache__
 .autoenv.zsh
 *.pyc
+.rbenv-gemsets
