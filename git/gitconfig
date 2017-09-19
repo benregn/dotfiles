@@ -7,7 +7,7 @@
     user = benregn
 
 [core]
-	excludesfile = /Users/tomas/.gitignore_global
+	excludesfile = ~/.gitignore_global
     editor = subl -n -w
     filemode = false
     trustctime = false
