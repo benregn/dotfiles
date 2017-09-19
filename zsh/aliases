@@ -30,4 +30,4 @@ unset LS_COLORS LS_TIMESTYLEISO LS_GROUPDIRSFIRST
 
 
 alias edit="subl ~/.dotfiles"
-alias reload='source ~/.zshrc && echo "zsh reloaded"'
+alias reload='exec "$SHELL"'
