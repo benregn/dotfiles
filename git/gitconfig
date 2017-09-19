@@ -136,3 +136,5 @@
     showUntrackedFiles = all
 [stash]
     showPatch = true
+[rerere]
+	enabled = true
