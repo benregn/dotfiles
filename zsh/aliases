@@ -9,6 +9,8 @@ alias gs="git status -sb"
 alias dc="docker-compose"
 compdef dc=docker-compose
 
+alias rb=rbenv
+
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
