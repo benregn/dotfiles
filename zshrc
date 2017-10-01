@@ -48,9 +48,18 @@ if zplug check zsh-users/zsh-autosuggestions; then
   ZSH_AUTOSUGGEST_CLEAR_WIDGETS=("${(@)ZSH_AUTOSUGGEST_CLEAR_WIDGETS:#(up|down)-line-or-history}")
 fi
 
+## case-insensitive (all),partial-word and then substring completion
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+
 export N_PREFIX="$HOME/.n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
 
 # for triggering zsh-autoenv on new iTerm2 panes
 if [[ -a .autoenv.zsh ]]; then
   cd .
+fi
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+if is-executable rbenv; then
+  eval "$(rbenv init -)"
 fi
