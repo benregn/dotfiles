@@ -16,6 +16,7 @@
 
 [commit]
 	template = ~/.git-commit-msg
+	cleanup = strip
 
 [init]
     templatedir = ~/.git-templates
