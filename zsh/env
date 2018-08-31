@@ -11,6 +11,9 @@ export HISTSIZE=110000
 export SAVEHIST=100000
 export HISTFILE=~/.zsh_history
 
+## GOLANG
+export GOPATH=$HOME/projects/gocodes
+
 
 export ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
 
