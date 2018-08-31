@@ -28,6 +28,7 @@ alias ld="ls -ldF ${LS_COLORS} */"
 
 unset LS_COLORS LS_TIMESTYLEISO LS_GROUPDIRSFIRST
 
+alias weather="curl -4 http://wttr.in/copenhagen"
 
 alias edit="subl ~/.dotfiles"
 alias reload='exec "$SHELL"'
