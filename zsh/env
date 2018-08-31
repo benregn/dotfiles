@@ -2,6 +2,7 @@
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/projects
 export PIP_REQUIRE_VIRTUALENV=true
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
 
 
 export CLICOLOR=1
