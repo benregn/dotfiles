@@ -9,17 +9,26 @@ casks:
   - calibre
   - cyberduck
   - dash
+  - dbeaver-community
   - docker
   - dropbox
   - epubquicklook
-  - firefoxnightly
+  - expo-xde
+  - firefoxdeveloperedition
   - flux
+  - font-source-code-pro
+  - gitkraken
+  - google-backup-and-sync
   - google-chrome-beta
+  - google-play-music-desktop-player
   - hammerspoon
+  - insomnia
   - iterm2
   - java
   - keybase
+  - meld
   - namechanger
+  - ngrok
   - qlcolorcode
   - qlimagesize
   - qlmarkdown
@@ -30,38 +39,40 @@ casks:
   - quicklook-json
   - quicklookase
   - rescuetime
+  - slack
   - sourcetree
   - steam
   - sublime-text-dev
   - suspicious-package
+  - telegram
   - the-unarchiver
   - transmission
+  - visual-studio-code
   - vlc
   - webpquicklook
+  - xquartz
 formulas:
   - awscli
+  - chunkwm
   - cmake
   - coreutils
+  - dep
+  - dfu-util
   - diff-so-fancy
-  - docker-completion
-  - docker-compose-completion
-  - docker-machine-completion
   - dockutil
   - drone
   - fasd
   - gcc
   - gdbm
   - git
-  - gnu-sed --default-names
-  - gnupg2
   - gnutls
   - go
   - gpg-agent
-  - gpg2
-  - htop-osx
+  - htop
   - httpie
   - hub
   - jq
+  - kubernetes-cli
   - lastpass-cli
   - libevent
   - libffi
@@ -69,30 +80,30 @@ formulas:
   - llvm
   - md5sha1sum
   - node
-  - openssl
   - pgcli
-  - pyenv
-  - pyenv-virtualenv
-  - python
+  - pipenv
   - python3
-  - rancher-cli
-  - rancher-compose
+  - python2
   - redis
   - rename
+  - ripgrep
   - slurm
   - source-highlight
-  - speedtest_cli
+  - speedtest-cli
+  - sqlite
   - tcptraceroute
+  - telnet
   - terminal-notifier
-  - the_silver_searcher
   - tldr
   - tmux
   - tree
   - unrar
   - vim
   - watch
+  - watchman
   - wget
   - yaml-cpp
+  - yarn
   - zsh-completions
 icons:
     iTerm: https://dribbble.com/shots/1702947-iTerm-Replacement-Icon/attachments/271548
