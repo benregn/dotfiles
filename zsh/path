@@ -2,11 +2,13 @@ typeset -U path
 
 # prepend to $PATH
 path=(
+    "$HOME/.n/bin"
     "$HOME/bin"
     "$HOME/local"
     "$HOME/.local/bin"
     "$HOME/.rbenv/shims"
     "$HOME/.rbenv/bin"
+    "$HOME/Library/Python/3.6/bin"
 
     $path
 )
