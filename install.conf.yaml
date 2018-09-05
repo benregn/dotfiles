@@ -27,6 +27,8 @@
         path: git/gitignore_global
     ~/.git-templates/hooks/post-checkout:
         path: git/hook-post-checkout
+    ~/.git-templates/hooks/pre-push:
+        path: git/hook-pre-push
     ~/.git-commit-msg:
         path: git/git-commit-msg
     ~/.git-alias-email-guess.sh:
