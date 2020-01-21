@@ -17,6 +17,8 @@ alias ....="cd ../../.."
 
 alias j='fasd_cd -d'
 
+alias cat=bat
+
 LS_COLORS=`is-supported "ls --color" --color -G`
 LS_TIMESTYLEISO=`is-supported "ls --time-style=long-iso" --time-style=long-iso`
 LS_GROUPDIRSFIRST=`is-supported "ls --group-directories-first" --group-directories-first`
@@ -31,4 +33,6 @@ unset LS_COLORS LS_TIMESTYLEISO LS_GROUPDIRSFIRST
 alias weather="curl -4 http://wttr.in/copenhagen"
 
 alias edit="subl ~/.dotfiles"
-alias reload='exec "$SHELL"'
+alias reload='exec "$SHELL" -l'
+
+alias path="echo -e ${PATH//:/\\n}"
