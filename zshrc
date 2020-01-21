@@ -69,12 +69,14 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/tomas/google-cloud-sdk/path.zsh.inc' ]; then
-  . '/Users/tomas/google-cloud-sdk/path.zsh.inc';
+if [ -f '~/google-cloud-sdk/path.zsh.inc' ]; then
+  . '~/google-cloud-sdk/path.zsh.inc';
 fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/tomas/google-cloud-sdk/completion.zsh.inc' ]; then
-  . '/Users/tomas/google-cloud-sdk/completion.zsh.inc';
+if [ -f '~/google-cloud-sdk/completion.zsh.inc' ]; then
+  . '~/google-cloud-sdk/completion.zsh.inc';
 fi
 source <(kubectl completion zsh)
+
+source ~/Library/Preferences/org.dystroy.broot/launcher/bash/br
