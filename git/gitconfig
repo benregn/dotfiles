@@ -7,8 +7,8 @@
     user = benregn
 
 [core]
-	excludesfile = ~/.gitignore_global
-    editor = nano
+    excludesfile = ~/.gitignore_global
+    editor = code --wait
     filemode = false
     trustctime = false
     logAllRefUpdates = true
@@ -28,10 +28,14 @@
     stl = ls-files -m -o --exclude-standard
     ci = commit
     br = branch
+    m = checkout master
+    dev = checkout develop
+    cr = clone --recursive
+
     co = checkout
     cob = checkout -b
-    m = checkout master
-    cr = clone --recursive
+    cobi = !BRANCH=`jira mine --template git-branch | fzf` && git checkout develop && git pull && git checkout -b ${BRANCH}
+    coi = !BRANCH=`git recent-simple | fzf` && git checkout ${BRANCH}
 
     fpush = push --force-with-lease
 
@@ -41,9 +45,10 @@
     dws = diff --word-diff --staged
     dfiles = diff --name-status master
 
+    recent-simple = !git for-each-ref --sort=-committerdate --format='%(refname:short)' refs/heads/ | head -n 20
     undo = reset --soft HEAD^
     ag = !sh -c 'git ls-files -m -o --exclude-standard | grep $1 | xargs git add --verbose' -
-    l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --max-count=5
     ll = log --pretty=oneline --graph --abbrev-commit
     lm = log --pretty=format:'* %s (%h)'
     lg = log -p
@@ -127,9 +132,10 @@
     smudge = git media smudge %f
     required = true
 [filter "lfs"]
-    clean = git-lfs clean %f
-    smudge = git-lfs smudge %f
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
     required = true
+	process = git-lfs filter-process
 [rebase]
     autosquash = true
     autostash = true
