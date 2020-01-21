@@ -1,34 +1,39 @@
 casks:
   - alfred
+  - android-platform-tools
+  - android-studio
   - appcleaner
   - arq
   - atom
+  - authy
   - beardedspice
-  - betterzipql
   - caffeine
   - calibre
   - cyberduck
   - dash
+  - db-browser-for-sqlite
   - dbeaver-community
   - docker
   - dropbox
   - epubquicklook
+  - evernote
   - expo-xde
-  - firefoxdeveloperedition
+  - firefox-developer-edition
   - flux
-  - font-source-code-pro
   - gitkraken
   - google-backup-and-sync
   - google-chrome-beta
-  - google-play-music-desktop-player
   - hammerspoon
   - insomnia
   - iterm2
   - java
   - keybase
+  - marshallofsound-google-play-music-player
   - meld
+  - mounty
   - namechanger
   - ngrok
+  - notion
   - qlcolorcode
   - qlimagesize
   - qlmarkdown
@@ -41,52 +46,122 @@ casks:
   - rescuetime
   - slack
   - sourcetree
+  - spotify
   - steam
   - sublime-text-dev
   - suspicious-package
   - telegram
   - the-unarchiver
+  - ticktick
   - transmission
+  - viscosity
   - visual-studio-code
+  - visual-studio-code-insiders
   - vlc
   - webpquicklook
   - xquartz
 formulas:
+  - act
+  - adr-tools
+  - asciidoc
+  - augeas
+  - avr-binutils
+  - avr-gcc@7
+  - avrdude
+  - aws-elasticbeanstalk
   - awscli
+  - bat
+  - bind
+  - cairo
+  - certbot
   - chunkwm
   - cmake
   - coreutils
+  - ctags
   - dep
+  - dfu-programmer
   - dfu-util
+  - dialog
   - diff-so-fancy
+  - dive
+  - docbook
+  - docbook-xsl
   - dockutil
   - drone
+  - exa
   - fasd
+  - fluxctl
+  - fontconfig
+  - freetype
+  - fribidi
+  - fsevents-tools
+  - fzf
   - gcc
+  - gcc-arm-none-eabi
   - gdbm
   - git
+  - git-recent
+  - glib
   - gnutls
   - go
-  - gpg-agent
+  - go-jira
+  - graphite2
+  - hadolint
+  - harfbuzz
+  - helm
+  - heroku
+  - heroku-node
+  - highlight
   - htop
   - httpie
   - hub
+  - istioctl
+  - jid
   - jq
+  - json-c
+  - jsonnet
+  - k9s
+  - kubectx
   - kubernetes-cli
+  - kubernetes-helm
+  - kubespy
+  - kustomize
   - lastpass-cli
+  - libassuan
+  - libelf
   - libevent
   - libffi
+  - libftdi0
+  - libgpg-error
+  - libmagic
+  - libpng
+  - libusb-compat
   - libyaml
   - llvm
+  - loc
+  - lua
   - md5sha1sum
+  - miller
+  - netlify-cli
+  - nginx
+  - nmap
   - node
+  - node@10
+  - pango
   - pgcli
+  - pinentry
   - pipenv
-  - python3
+  - pixman
+  - pkg-config
+  - postgresql
+  - prisma
+  - pv
   - python2
+  - python3
   - redis
   - rename
   - ripgrep
+  - sloccount
   - slurm
   - source-highlight
   - speedtest-cli
@@ -94,8 +169,10 @@ formulas:
   - tcptraceroute
   - telnet
   - terminal-notifier
+  - tig
   - tldr
   - tmux
+  - tokei
   - tree
   - unrar
   - vim
@@ -109,14 +186,9 @@ icons:
     iTerm: https://dribbble.com/shots/1702947-iTerm-Replacement-Icon/attachments/271548
 taps:
   - caskroom/cask
-  - caskroom/versions
   - drone/drone
-  - homebrew/dupes
-  - homebrew/binary
   - homebrew/boneyard
-  - homebrew/completions
   - homebrew/core
-  - homebrew/versions
-  - homebrew/x11
   - px4/px4
   - tldr-pages/tldr
+  - crisidev/homebrew-chunkwm
