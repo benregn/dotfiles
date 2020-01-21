@@ -1,4 +1,7 @@
 #!/bin/sh
-pip3 install -U cider
+brew install pipx
+pipx ensurepath
+
+pipx install cider
 
 cider restore
