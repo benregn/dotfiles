@@ -7,7 +7,7 @@ export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
 
 export CLICOLOR=1
 export BLOCK_SIZE=human-readable # https://www.gnu.org/software/coreutils/manual/html_node/Block-size.html
-export HISTSIZE=110000
+export HISTSIZE=500000
 export SAVEHIST=100000
 export HISTFILE=~/.zsh_history
 
