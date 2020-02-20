@@ -12,7 +12,6 @@ casks:
   - cyberduck
   - dash
   - db-browser-for-sqlite
-  - dbeaver-community
   - docker
   - dropbox
   - epubquicklook
@@ -45,7 +44,6 @@ casks:
   - quicklookase
   - rescuetime
   - slack
-  - sourcetree
   - spotify
   - steam
   - sublime-text-dev
@@ -59,38 +57,23 @@ casks:
   - visual-studio-code-insiders
   - vlc
   - webpquicklook
-  - xquartz
 formulas:
-  - act
-  - adr-tools
   - asciidoc
-  - augeas
-  - avr-binutils
-  - avr-gcc@7
-  - avrdude
-  - aws-elasticbeanstalk
   - awscli
   - bat
   - bind
   - cairo
   - certbot
-  - chunkwm
   - cmake
   - coreutils
   - ctags
   - dep
-  - dfu-programmer
-  - dfu-util
   - dialog
   - diff-so-fancy
   - dive
-  - docbook
-  - docbook-xsl
-  - dockutil
-  - drone
   - exa
   - fasd
-  - fluxctl
+  - fd
   - fontconfig
   - freetype
   - fribidi
@@ -100,33 +83,28 @@ formulas:
   - gcc-arm-none-eabi
   - gdbm
   - git
+  - github/gh/gh
   - git-recent
   - glib
   - gnutls
   - go
-  - go-jira
-  - graphite2
   - hadolint
   - harfbuzz
   - helm
-  - heroku
-  - heroku-node
   - highlight
   - htop
   - httpie
   - hub
-  - istioctl
   - jid
   - jq
   - json-c
   - jsonnet
-  - k9s
+  - derailed/k9s/k9s
   - kubectx
   - kubernetes-cli
   - kubernetes-helm
   - kubespy
   - kustomize
-  - lastpass-cli
   - libassuan
   - libelf
   - libevent
@@ -146,17 +124,12 @@ formulas:
   - nginx
   - nmap
   - node
-  - node@10
   - pango
   - pgcli
   - pinentry
   - pipenv
-  - pixman
   - pkg-config
   - postgresql
-  - prisma
-  - pv
-  - python2
   - python3
   - redis
   - rename
@@ -183,12 +156,8 @@ formulas:
   - yarn
   - zsh-completions
 icons:
-    iTerm: https://dribbble.com/shots/1702947-iTerm-Replacement-Icon/attachments/271548
+  iTerm: https://dribbble.com/shots/1702947-iTerm-Replacement-Icon/attachments/271548
 taps:
-  - caskroom/cask
-  - drone/drone
-  - homebrew/boneyard
   - homebrew/core
   - px4/px4
   - tldr-pages/tldr
-  - crisidev/homebrew-chunkwm
