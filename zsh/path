@@ -3,6 +3,7 @@ typeset -U path
 # prepend to $PATH
 path=(
     "$HOME/.n/bin"
+    "$HOME/.poetry/bin"
     "$HOME/bin"
     "$HOME/local"
     "$HOME/.local/bin"
