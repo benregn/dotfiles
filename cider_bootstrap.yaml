@@ -5,7 +5,6 @@ casks:
   - appcleaner
   - arq
   - authy
-  - beardedspice
   - caffeine
   - calibre
   - cyberduck
@@ -16,7 +15,7 @@ casks:
   - epubquicklook
   - evernote
   - expo-xde
-  - firefox-developer-edition
+  - firefox-beta
   - flux
   - gitkraken
   - google-backup-and-sync
@@ -47,9 +46,9 @@ casks:
   - steam
   - sublime-text-dev
   - suspicious-package
+  - tableplus
   - telegram
   - the-unarchiver
-  - ticktick
   - transmission
   - viscosity
   - visual-studio-code
@@ -61,12 +60,14 @@ formulas:
   - awscli
   - bat
   - bind
+  - broot
   - cairo
   - certbot
   - cmake
   - coreutils
   - ctags
   - dep
+  - derailed/k9s/k9s
   - dialog
   - diff-so-fancy
   - dive
@@ -82,8 +83,8 @@ formulas:
   - gcc-arm-none-eabi
   - gdbm
   - git
-  - github/gh/gh
   - git-recent
+  - github/gh/gh
   - glib
   - gnutls
   - go
@@ -98,7 +99,6 @@ formulas:
   - jq
   - json-c
   - jsonnet
-  - derailed/k9s/k9s
   - kubectx
   - kubernetes-cli
   - kubernetes-helm
@@ -123,10 +123,12 @@ formulas:
   - nginx
   - nmap
   - node
+  - now-cli
   - pango
   - pgcli
   - pinentry
   - pipenv
+  - pipx
   - pkg-config
   - postgresql
   - python3
@@ -157,6 +159,11 @@ formulas:
 icons:
   iTerm: https://dribbble.com/shots/1702947-iTerm-Replacement-Icon/attachments/271548
 taps:
+  - domt4/autoupdate
+  - github/gh
+  - homebrew/cask
+  - homebrew/cask-fonts
+  - homebrew/cask-versions
   - homebrew/core
   - px4/px4
   - tldr-pages/tldr
