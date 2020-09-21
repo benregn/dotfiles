@@ -1,7 +1,0 @@
-#!/bin/sh
-brew install pipx
-pipx ensurepath
-
-pipx install cider
-
-cider restore

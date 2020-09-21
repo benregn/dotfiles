@@ -22,3 +22,8 @@ export LANG=en_US.UTF-8
 export AUTOENV_FILE_ENTER=.autoenv.zsh
 export AUTOENV_FILE_LEAVE=.autoenv.zsh
 export AUTOENV_HANDLE_LEAVE=1
+
+### homebrew
+# reduce how often homebrew updates when running commands
+# used in conjunction with domt4/autoupdate
+export HOMEBREW_AUTO_UPDATE_SECS="86400"

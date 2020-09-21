@@ -14,6 +14,9 @@ if is-executable fasd; then
     eval "$(fasd --init auto)"
 fi
 
+# Don't beep when auto-completing
+unsetopt LIST_BEEP
+
 # Enable interactive comments (# on the command line)
 setopt interactivecomments
 
@@ -51,8 +54,6 @@ fi
 ## case-insensitive (all),partial-word and then substring completion
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
-export N_PREFIX="$HOME/.n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
-
 # for triggering zsh-autoenv on new iTerm2 panes
 if [[ -a .autoenv.zsh ]]; then
   cd .
@@ -77,6 +78,9 @@ fi
 if [ -f '~/google-cloud-sdk/completion.zsh.inc' ]; then
   . '~/google-cloud-sdk/completion.zsh.inc';
 fi
-source <(kubectl completion zsh)
 
-source ~/Library/Preferences/org.dystroy.broot/launcher/bash/br
+if is-executable kubectl; then
+  source <(kubectl completion zsh)
+fi
+
+source ~/.config/broot/launcher/bash/br
