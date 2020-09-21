@@ -1,4 +1,4 @@
-alias venv3="mkvirtualenv -r ~/.dotfiles/virtualenv-requirements.txt --python=`which python3`"
+alias venv3="mkvirtualenv -r ~/.global_virtualenv-requirements.txt --python=`which python3`"
 
 alias ll="ls -lahAF"
 
@@ -18,6 +18,8 @@ alias ....="cd ../../.."
 alias j='fasd_cd -d'
 
 alias cat=bat
+
+alias code=code-insiders
 
 LS_COLORS=`is-supported "ls --color" --color -G`
 LS_TIMESTYLEISO=`is-supported "ls --time-style=long-iso" --time-style=long-iso`
