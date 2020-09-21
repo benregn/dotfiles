@@ -1,9 +1,7 @@
-Dotfiles
-========
+# Dotfiles
 
-After cloning this repo, run `install` to automatically set up the environment. Note that the install script is idempotent: it can safely be run multiple times.
+These dotfile use [zero.sh][zero.sh] to install software and manage symlinks.
 
-Dotfiles uses [Dotbot][dotbot] for installation. Inspiration taken from [anishathalye/dotfiles][anishathalye] and other dotbot users.
+After cloning this repo, run `./zero_setup.sh` to automatically set up the environment.
 
-[dotbot]: https://github.com/anishathalye/dotbot
-[anishathalye]: https://github.com/anishathalye/dotfiles
+[zero.sh]: https://github.com/zero-sh/zero.sh
