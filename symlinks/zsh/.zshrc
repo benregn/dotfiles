@@ -83,4 +83,8 @@ if is-executable kubectl; then
   source <(kubectl completion zsh)
 fi
 
+if is-executable gh; then
+  source <(gh completion --shell zsh)
+fi
+
 source ~/.config/broot/launcher/bash/br
