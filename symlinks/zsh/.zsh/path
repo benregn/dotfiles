@@ -2,7 +2,6 @@ typeset -U path
 
 # prepend to $PATH
 path=(
-    "$HOME/.n/bin"
     "$HOME/.poetry/bin"
     "$HOME/bin"
     "$HOME/local"
@@ -10,6 +9,7 @@ path=(
     "$HOME/.rbenv/shims"
     "$HOME/.rbenv/bin"
     "$HOME/Library/Python/3.7/bin"
+    "/usr/local/opt/ruby/bin"
 
     $path
 )
