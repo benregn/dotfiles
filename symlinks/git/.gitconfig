@@ -104,7 +104,7 @@
     prompt = false
 
 [push]
-    default = simple
+    default = current
 
 [fetch]
   prune = true
