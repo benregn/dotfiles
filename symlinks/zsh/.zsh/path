@@ -10,6 +10,8 @@ path=(
     "$HOME/.rbenv/bin"
     "$HOME/Library/Python/3.7/bin"
     "/usr/local/opt/ruby/bin"
+    # in order to use node LTS instead of latest
+    "/usr/local/opt/node@14/bin"
 
     $path
 )
