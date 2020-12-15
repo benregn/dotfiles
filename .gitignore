@@ -1,2 +1,4 @@
 system/.custom
 bin/subl
+
+symlinks/git/.git-templates/hooks/post-commit
