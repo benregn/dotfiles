@@ -71,7 +71,7 @@ cask "telegram"
 cask "the-unarchiver"
 cask "transmission"
 cask "viscosity"
-cask "visual-studio-code-insiders"
+cask "visual-studio-code"
 cask "vlc"
 cask "webpquicklook"
 

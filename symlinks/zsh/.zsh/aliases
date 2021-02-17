@@ -19,8 +19,6 @@ alias j='fasd_cd -d'
 
 alias cat=bat
 
-alias code=code-insiders
-
 LS_COLORS=`is-supported "ls --color" --color -G`
 LS_TIMESTYLEISO=`is-supported "ls --time-style=long-iso" --time-style=long-iso`
 LS_GROUPDIRSFIRST=`is-supported "ls --group-directories-first" --group-directories-first`
