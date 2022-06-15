@@ -1,7 +1,5 @@
 alias venv3="mkvirtualenv -r ~/.global_virtualenv-requirements.txt --python=`which python3`"
 
-alias ll="ls -lahAF"
-
 alias g="git"
 compdef g=git
 alias gs="git status -sb"
@@ -23,10 +21,14 @@ LS_COLORS=`is-supported "ls --color" --color -G`
 LS_TIMESTYLEISO=`is-supported "ls --time-style=long-iso" --time-style=long-iso`
 LS_GROUPDIRSFIRST=`is-supported "ls --group-directories-first" --group-directories-first`
 
-alias l="ls -lahAF ${LS_COLORS} ${LS_TIMESTYLEISO} ${LS_GROUPDIRSFIRST}"
-alias ll=l
-alias lt="ls -lhAtrF ${LS_COLORS} ${LS_TIMESTYLEISO} ${LS_GROUPDIRSFIRST}"
-alias ld="ls -ldF ${LS_COLORS} */"
+# alias l="ls -lahAF ${LS_COLORS} ${LS_TIMESTYLEISO} ${LS_GROUPDIRSFIRST}"
+# alias ll=l
+# alias lt="ls -lhAtrF ${LS_COLORS} ${LS_TIMESTYLEISO} ${LS_GROUPDIRSFIRST}"
+# alias ld="ls -ldF ${LS_COLORS} */"
+alias l='exa'
+alias la='exa -a'
+alias ll='exa -lahF'
+alias ls='exa --color=auto'
 
 unset LS_COLORS LS_TIMESTYLEISO LS_GROUPDIRSFIRST
 
