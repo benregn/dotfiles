@@ -18,6 +18,10 @@ if is-executable fasd; then
     eval "$(fasd --init auto)"
 fi
 
+if is-executable asdf; then
+    . "$(brew --prefix asdf)/libexec/asdf.sh"
+fi
+
 # Don't beep when auto-completing
 unsetopt LIST_BEEP
 

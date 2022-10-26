@@ -14,6 +14,8 @@ zplug supercrabtree/k, defer:0
 zplug docker/compose, as:command, use:contrib/completion/zsh/_docker-compose, defer:0
 zplug docker/docker, as:command, use:contrib/completion/zsh/_docker, defer:0
 
+zplug asdf-vm/asdf, use:completions, defer:0
+
 zplug zdharma/fast-syntax-highlighting, at:master
 
 zplug zsh-users/zsh-autosuggestions, at:develop, defer:2
