@@ -32,7 +32,7 @@ alias ls='exa --color=auto'
 
 unset LS_COLORS LS_TIMESTYLEISO LS_GROUPDIRSFIRST
 
-alias weather="curl -4 http://wttr.in/copenhagen"
+alias weather="curl -4 'http://wttr.in?M'"
 
 alias edit="code ~/.dotfiles"
 alias reload='exec "$SHELL" -l'
