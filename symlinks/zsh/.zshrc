@@ -96,3 +96,5 @@ if is-executable gh; then
 fi
 
 source ~/.config/broot/launcher/bash/br
+
+eval "$(direnv hook zsh)"
