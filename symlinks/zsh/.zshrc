@@ -10,6 +10,10 @@ source ~/.zsh/aliases
 
 # source /usr/local/bin/virtualenvwrapper.sh
 
+if is-executable starship; then
+    eval "$(starship init zsh)"
+fi
+
 if is-executable fasd; then
     eval "$(fasd --init auto)"
 fi
