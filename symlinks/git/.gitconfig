@@ -61,6 +61,7 @@
     # cobi = !BRANCH=`jira mine --template git-branch | fzf` && git checkout develop && git pull && git checkout -b ${BRANCH}
     cobi = !BRANCH=`gh issue list | fzf` && git checkout master && git pull && git checkout -b ${BRANCH}
     coi = !BRANCH=`git recent-simple | fzf` && git checkout ${BRANCH}
+    fza = "!git ls-files -m -o --exclude-standard | fzf --print0 -m | xargs -0 -t -o git add"
 
     fpush = push --force-with-lease
 
