@@ -1,0 +1,46 @@
+.editorconfig
+  h_9889e896d9694b 4-12
+Brewfile
+  h_9889e896d9694b 76
+scripts/download_urls.sh
+  h_9889e896d9694b 1-192
+scripts/extract_html_text.sh
+  h_9889e896d9694b 1-177
+symlinks/config/.config/starship.toml
+  h_9889e896d9694b 8-105,115-119,163-170
+symlinks/git/.gitconfig
+  h_9889e896d9694b 23,75-78,87-92,144,147,178-187
+symlinks/git/.gitignore_global
+  h_9889e896d9694b 1-2,13-74
+symlinks/iex/.iex.exs
+  h_9889e896d9694b 2-3,5,16,23,27-28,31-33,49,60-65
+symlinks/zsh/.zsh/aliases
+  h_9889e896d9694b 28-31,37
+symlinks/zsh/.zsh/completions/.op_version
+  h_9889e896d9694b 1
+symlinks/zsh/.zsh/completions/_op
+  h_9889e896d9694b 1-212
+symlinks/zsh/.zsh/completions/_pass-cli
+  h_9889e896d9694b 1-5312
+symlinks/zsh/.zsh/env
+  h_9889e896d9694b 25-29
+symlinks/zsh/.zsh/functions
+  h_9889e896d9694b 63-163
+symlinks/zsh/.zsh/path
+  h_9889e896d9694b 12-15
+symlinks/zsh/.zsh/zplug
+  h_9889e896d9694b 1,18-19
+symlinks/zsh/.zshrc
+  h_9889e896d9694b 11,13,17,64,68,73-131
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "e51dfe79ce09ec317c7adc25caa831496444c9e5",
+  "prompts": {},
+  "humans": {
+    "h_9889e896d9694b": {
+      "author": "Tomas Thor Jonsson <benregn@gmail.com>"
+    }
+  }
+}
