@@ -8,18 +8,14 @@ source ~/.zsh/functions
 
 source ~/.zsh/aliases
 
-# source /usr/local/bin/virtualenvwrapper.sh
+fpath=("$HOME/.zsh/completions" $fpath)
 
-if is-executable starship; then
+if command -v starship >/dev/null 2>&1; then
     eval "$(starship init zsh)"
 fi
 
-if is-executable fasd; then
+if command -v fasd >/dev/null 2>&1; then
     eval "$(fasd --init auto)"
-fi
-
-if is-executable asdf; then
-    . "$(brew --prefix asdf)/libexec/asdf.sh"
 fi
 
 # Don't beep when auto-completing
@@ -62,39 +58,74 @@ fi
 ## case-insensitive (all),partial-word and then substring completion
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
-# for triggering zsh-autoenv on new iTerm2 panes
-if [[ -a .autoenv.zsh ]]; then
-  cd .
-fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-if is-executable rbenv; then
-  eval "$(rbenv init -)"
-fi
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '~/google-cloud-sdk/path.zsh.inc' ]; then
-  . '~/google-cloud-sdk/path.zsh.inc';
-fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '~/google-cloud-sdk/completion.zsh.inc' ]; then
-  . '~/google-cloud-sdk/completion.zsh.inc';
-fi
-
-if is-executable kubectl; then
+if command -v kubectl >/dev/null 2>&1; then
   source <(kubectl completion zsh)
 fi
 
-if is-executable gh; then
+if command -v gh >/dev/null 2>&1; then
   source <(gh completion --shell zsh)
 fi
 
-source ~/.config/broot/launcher/bash/br
-
 eval "$(direnv hook zsh)"
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
+
+#compdef gt
+###-begin-gt-completions-###
+#
+# yargs command completion script
+#
+# Installation: gt completion >> ~/.zshrc
+#    or gt completion >> ~/.zprofile on OSX.
+#
+_gt_yargs_completions()
+{
+  local reply
+  local si=$IFS
+  IFS=$'
+' reply=($(COMP_CWORD="$((CURRENT-1))" COMP_LINE="$BUFFER" COMP_POINT="$CURSOR" gt --get-yargs-completions "${words[@]}"))
+  IFS=$si
+  _describe 'values' reply
+}
+compdef _gt_yargs_completions gt
+###-end-gt-completions-###
+
+source /Users/tomas/projects/_clones/fzf-docker/docker-fzf
+
+[[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
+
+if command -v wt >/dev/null 2>&1; then eval "$(command wt config shell init zsh)"; fi
+
+# One-time-per-shell notification if op was updated
+autoload -Uz add-zsh-hook
+
+_opcomp_hint_once() {
+  add-zsh-hook -d precmd _opcomp_hint_once
+  if opcomp-check; then
+    echo "op (1password-cli) updated\n refresh completions: opcomp-update"
+  fi
+}
+
+add-zsh-hook precmd _opcomp_hint_once
+
+# Added by git-ai installer on Wed May  6 09:44:16 CEST 2026
+export PATH="/Users/tomas/.git-ai/bin:$PATH"
+
+eval "$(zoxide init zsh)"
+
+# pnpm
+export PNPM_HOME="/Users/tomas/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME/bin:"*) ;;
+  *) export PATH="$PNPM_HOME/bin:$PATH" ;;
+esac
+# pnpm end
+
+# kimi-code
+export PATH="/Users/tomas/.kimi-code/bin:$PATH"
+
+# mise - curl https://mise.jdx.dev/install.sh | sh
+eval "$(mise activate zsh)"

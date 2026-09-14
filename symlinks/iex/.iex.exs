@@ -1,7 +1,8 @@
 timestamp = fn ->
-  {_date, {hour, minute, _second}} = :calendar.local_time
+  {_date, {hour, minute, _second}} = :calendar.local_time()
+
   [hour, minute]
-  |> Enum.map(&(String.pad_leading(Integer.to_string(&1), 2, "0")))
+  |> Enum.map(&String.pad_leading(Integer.to_string(&1), 2, "0"))
   |> Enum.join(":")
 end
 
@@ -12,24 +13,24 @@ IEx.configure(
       atom: :light_cyan,
       string: :light_black,
       boolean: :red,
-      nil: [:magenta, :bright],
+      nil: [:magenta, :bright]
     ],
     ls_directory: :cyan,
     ls_device: :yellow,
     doc_code: :green,
     doc_inline_code: :magenta,
     doc_headings: [:cyan, :underline],
-    doc_title: [:cyan, :bright, :underline],
+    doc_title: [:cyan, :bright, :underline]
   ],
   default_prompt:
     "#{IO.ANSI.green()}%prefix#{IO.ANSI.reset()} " <>
-    "[#{IO.ANSI.magenta()}#{timestamp.()}#{IO.ANSI.reset()} " <>
-    ":: #{IO.ANSI.cyan()}%counter#{IO.ANSI.reset()}] >",
+      "[#{IO.ANSI.magenta()}#{timestamp.()}#{IO.ANSI.reset()} " <>
+      ":: #{IO.ANSI.cyan()}%counter#{IO.ANSI.reset()}] >",
   alive_prompt:
     "#{IO.ANSI.green()}%prefix#{IO.ANSI.reset()} " <>
-    "(#{IO.ANSI.yellow()}%node#{IO.ANSI.reset()}) " <>
-    "[#{IO.ANSI.magenta()}#{timestamp.()}#{IO.ANSI.reset()} " <>
-    ":: #{IO.ANSI.cyan()}%counter#{IO.ANSI.reset()}] >",
+      "(#{IO.ANSI.yellow()}%node#{IO.ANSI.reset()}) " <>
+      "[#{IO.ANSI.magenta()}#{timestamp.()}#{IO.ANSI.reset()} " <>
+      ":: #{IO.ANSI.cyan()}%counter#{IO.ANSI.reset()}] >",
   history_size: 50,
   inspect: [
     pretty: true,
@@ -45,7 +46,7 @@ defmodule KEx do
       if is_binary(term) do
         term
       else
-        inspect(term, limit: :infinity, pretty: true)
+        inspect(term, limit: :infinity, print_limit: :infinity, pretty: true)
       end
 
     port = Port.open({:spawn, "/usr/bin/pbcopy"}, [:binary])
@@ -56,3 +57,9 @@ defmodule KEx do
     term
   end
 end
+
+IO.puts(
+  "#{IO.ANSI.light_yellow()}==>#{IO.ANSI.reset()} " <>
+    "Loaded from ~/.iex.exs: " <>
+    "#{IO.ANSI.cyan()}KEx.pbcopy/1#{IO.ANSI.reset()} and #{IO.ANSI.cyan()}timestamp/0#{IO.ANSI.reset()}"
+)

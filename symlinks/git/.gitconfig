@@ -20,12 +20,10 @@
 
 [init]
     templatedir = ~/.git-templates
+	defaultBranch = main
 
 [interactive]
     diffFilter = delta --color-only --features=interactive
-
-[add.interactive]
-    useBuiltin = false # required for git 2.37.0
 
 [delta]
     navigate = true
@@ -74,10 +72,10 @@
     recent-simple = !git for-each-ref --sort=-committerdate --format='%(refname:short)' refs/heads/
     undo = reset --soft HEAD^
     ag = !sh -c 'git ls-files -m -o --exclude-standard | grep $1 | xargs git add --verbose' -
-    l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --max-count=7
-    ll = log --pretty=oneline --graph --abbrev-commit
-    lm = log --pretty=format:'* %s (%h)'
-    lg = log -p
+    l = log --first-parent --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --max-count=5
+    ll = log --first-parent --pretty=oneline --graph --abbrev-commit
+    lm = log --first-parent --pretty=format:'* %s (%h)'
+    lga = log --first-parent --all
 
 
     g = grep --break --heading --line-number
@@ -86,6 +84,12 @@
 
     email-guess = !. ~/.git-alias-email-guess.sh
     alias = !git config --get-regexp ^alias\\. | sed -e s/^alias\\.// -e s/\\ /\\ =\\ /
+    change-commits = "!f() { VAR=$1; OLD=$2; NEW=$3; shift 3; git filter-branch --env-filter \"if [[ \\\"$`echo $VAR`\\\" = '$OLD' ]]; then export $VAR='$NEW'; fi\" $@; }; f"
+    addm = "!git ls-files --deleted --modified --other --exclude-standard | fzf -0 -m --preview 'git diff --color=always {-1}' | xargs -r git add"
+    addmp = "!git ls-files --deleted --modified --exclude-standard | fzf -0 -m --preview 'git diff --color=always {-1}' | xargs -r -o git add -p"
+    # shift + "$@" because Git appends extra args to the *end* of shell aliases,
+    # so `git fixup <sha> --flag` would land --flag after the rebase otherwise.
+    fixup = "!f() { target=\"$1\"; shift; git commit --fixup \"$target\" && GIT_SEQUENCE_EDITOR=true git rebase -i --autosquash \"$@\" \"$target^\"; }; f"
 
 [color]
     ui = auto
@@ -137,9 +141,10 @@
 
 [diff]
     renames = copies
-    tool = Kaleidoscope
+	tool = bc
 [merge]
   tool = code
+  conflictStyle = diff3
 [mergetool "code"]
   cmd = code --wait --merge $REMOTE $LOCAL $BASE $MERGED
 
@@ -170,3 +175,13 @@
     reflogExpire = 200
     # default 30 days
     reflogExpireUnreachable = 90
+[blame]
+	ignoreRevsFile = :(optional).git-blame-ignore-revs
+[safe]
+	directory = /Users/tomas/projects/beadsmith
+	directory = /Users/tomas/projects/beadsmith
+	directory = /Users/tomas/projects/beadsmith
+	directory = /Users/tomas/projects/beadsmith
+[trace2]
+	eventTarget = af_unix:stream:/Users/tomas/.git-ai/internal/daemon/trace2.sock
+	eventNesting = 0

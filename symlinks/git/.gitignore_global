@@ -1,3 +1,5 @@
+.envrc
+
 *~
 ._*
 .DS_Store
@@ -5,8 +7,68 @@
 node_modules
 bower_components
 __pycache__
-.autoenv.zsh
 *.pyc
 .rbenv-gemsets
-scratch/
 
+# my project-local scratchpad
+scratch
+
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
+# Swap the comments on the following lines if you don't wish to use zero-installs
+# Documentation here: https://yarnpkg.com/features/zero-installs
+!.yarn/cache
+#.pnp.*
+
+
+# AI editors
+.cursor/rules
+.roo
+.clinerules
+.windsurf/rules
+.windsurf/workflows
+
+# claude
+.mcp.json
+.claude/settings.local.json
+.claude/**/*
+
+# HumanLayer thoughts pattern from Claude commands
+thoughts
+
+# https://github.com/mikehostetler/wreckit
+.wreckit
+
+# task master ai
+.claude/commands/tm/*
+.claude/TM_COMMANDS_GUIDE.md
+.claude/agents/task-checker.md
+.claude/agents/task-executor.md
+.claude/agents/task-orchestrator.md
+.github/instructions/dev_workflow.instructions.md
+.github/instructions/self_improve.instructions.md
+.github/instructions/taskmaster.instructions.md
+.github/instructions/vscode_rules.instructions.md
+.taskmaster/*
+
+# specstory.com
+.specstory
+
+# https://github.com/glittercowboy/get-shit-done
+.planning
+
+# https://www.agentastic.dev/
+.agentastic
+
+# https://tryhamster.com
+.hamster
+
+# Riptide artifacts (cloud-synced)
+.humanlayer/tasks/
+
+**/.claude/settings.local.json

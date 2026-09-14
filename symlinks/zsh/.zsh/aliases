@@ -25,16 +25,16 @@ LS_GROUPDIRSFIRST=`is-supported "ls --group-directories-first" --group-directori
 # alias ll=l
 # alias lt="ls -lhAtrF ${LS_COLORS} ${LS_TIMESTYLEISO} ${LS_GROUPDIRSFIRST}"
 # alias ld="ls -ldF ${LS_COLORS} */"
-alias l='exa'
-alias la='exa -a'
-alias ll='exa -lahF'
-alias ls='exa --color=auto'
+alias l='eza'
+alias la='eza --all'
+alias ll='eza --long --all --all --header --classify=always --group-directories-first'
+alias ls='eza --color=auto'
 
 unset LS_COLORS LS_TIMESTYLEISO LS_GROUPDIRSFIRST
 
 alias weather="curl -4 'http://wttr.in?M'"
 
-alias edit="code ~/.dotfiles"
+alias edit="code ~/projects/.dotfiles"
 alias reload='exec "$SHELL" -l'
 
 alias path="echo -e ${PATH//:/\\n}"
